@@ -1,0 +1,14 @@
+
+name: Portfolio CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Basic File Check
+        run: |
+          ls -R
+          [ -f index.html ] && echo "index.html exists"
+          [ -f style.css ] && echo "style.css exists"

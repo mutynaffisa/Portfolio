@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+:root {
+    --lilac: #D8B4F8;
+    --dark-lilac: #9B66CC;
+    --pink: #FFB7D5;
+    --ivory: #FFFFF0;
+    --text-color: #4A4A4A;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: var(--ivory);
+    /* Latar belakang dengan motif polkadot samar */
+    background-image: radial-gradient(var(--pink) 10%, transparent 10%), 
+                      radial-gradient(var(--lilac) 10%, transparent 10%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Animasi Mengambang */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: float 4s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+header {
+    background-color: rgba(255, 255, 240, 0.9);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px dashed var(--pink);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-lilac);
+    text-shadow: 2px 2px 0px var(--pink);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--lilac);
+    color: var(--white);
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.avatar-container {
+    width: 180px;
+    height: 180px;
+    background-color: var(--lilac);
+    border-radius: 50%;
+    border: 6px solid var(--white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 0 0 8px var(--pink);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--dark-lilac);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px var(--white);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    border: 3px solid var(--lilac);
+    display: inline-block;
+    box-shadow: 4px 4px 0px var(--pink);
+}
+
+.section {
+    padding: 4rem 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--dark-lilac);
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 0px var(--white);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Kartu yang lebih hidup dan "Pop" */
+.card {
+    background-color: var(--white);
+    border-radius: 25px;
+    padding: 2rem;
+    border: 4px solid var(--lilac);
+    box-shadow: 8px 8px 0px var(--pink);
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 12px 12px 0px var(--dark-lilac);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--ivory);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--dark-lilac);
+    margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--ivory);
+    color: var(--dark-lilac);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 2px solid var(--lilac);
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--dark-lilac);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 3px solid var(--white);
+    box-shadow: 4px 4px 0px var(--pink);
+    transition: 0.3s;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--pink);
+    color: var(--dark-lilac);
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--lilac);
+    color: var(--white);
+    font-weight: 700;
+    border-top: 4px dashed var(--white);
+    margin-top: 4rem;
+}
